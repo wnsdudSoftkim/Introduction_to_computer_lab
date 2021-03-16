@@ -8,7 +8,7 @@ int main(){
 	printf("Enter a value for x : ");
 	scanf_s("%d", &x);
 	
-	result = 3*x*x*x*x*x + 2*x*x*x*x - 5*x*x*x - x*x + 7*x - 6;
+	result = 3*(x*x*x*x*x) + 2*x*x*x*x - 5*x*x*x - x*x + 7*x - 6;
 	printf("Result value of Polynomial : %d", result);
 	
 	return 0;

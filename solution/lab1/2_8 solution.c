@@ -11,6 +11,28 @@
 // 매월 잔액은 지불 금액만큼 감소하지만 잔액 x 월 이자율만큼 증가합니다. 
 // 월 이자율을 찾으려면 사용자가 입력 한 이율을 백분율로 변환하고 12로 나눕니다.
 int main(){
+	float loan, rate, payment,month_rate;
+	
+	printf("Enter amount of loan : ");
+	scanf("%f", &loan);
+	printf("Enter interest rate : ");
+	scanf("%f", &rate);
+	printf("Enter monthly payment : ");
+	scanf("%f", &payment);
+	//월 이자율 - (rate/100) / 12
+	month_rate = (rate / 100) / 12;
+	loan = (loan - payment) + (loan * month_rate); //$ 19713.34
+	printf("Balance remaining after first payment: $%.2f \n", loan);
+	loan = (loan - payment) + (loan * month_rate);//$ 19425.25
+    printf("Balance remaining after second payment: $%.2f \n", loan);
+	loan = (loan - payment) + (loan * month_rate); // $ 19135.71
+	printf("Balance remaining after third payment: $%.2f\n", loan);
+		
+	return 0;
+}
+# include <stdio.h>
+
+int main(){
 	float loan, rate, payment, first_payment, second_payment, third_payment;
 	
 	printf("Enter amount of loan : ");
@@ -19,7 +41,7 @@ int main(){
 	scanf_s("%f", &rate);
 	printf("Enter monthly payment : ");
 	scanf_s("%f", &payment);
-	//월 이자율 - (rate/100) / 12
+	
 	first_payment = (loan*(1 + rate/12/100))-payment;
 	second_payment = (first_payment*(1 + rate/12/100))-payment;
 	third_payment = (second_payment*(1 + rate/12/100))-payment;
@@ -30,3 +52,4 @@ int main(){
 		
 	return 0;
 }
+

@@ -5,7 +5,7 @@ int main(void)
     int dollar, a, b, c, d;
 
     printf("Enter a dollar amount : ");
-    scanf_s("%d", &dollar);
+    scanf("%d", &dollar);
 
     a = dollar / 20;
     dollar = dollar - a * 20;

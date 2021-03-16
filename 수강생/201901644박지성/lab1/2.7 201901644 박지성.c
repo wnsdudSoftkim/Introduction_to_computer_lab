@@ -6,7 +6,7 @@ int main(void)
 		ones, amount_reduced_by_twenties, amount_reduced_by_tens;
 
 	printf("Enter a dollar amount: ");
-	scanf_s("%d", &amount);
+	scanf("%d", &amount);
 
 	twenties = amount / 20;
 	amount_reduced_by_twenties = amount - (20 * twenties);

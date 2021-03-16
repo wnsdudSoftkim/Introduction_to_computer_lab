@@ -7,6 +7,6 @@ float add_text(float amount) {
 int main() {
 	float amount = 0.1f;
 
-	scanf_s("%f", &amount);
+	scanf("%f", &amount);
 	printf("%f", add_text(amount));
 }

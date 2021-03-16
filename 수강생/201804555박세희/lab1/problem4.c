@@ -10,10 +10,10 @@ int main(void) {
 
 
 	printf("Enter a dollars:");
-	scanf_s("%d", &a);
+	scanf("%d", &a);
 
 	printf("Enter a cents:");
-	scanf_s("%d", &b);
+	scanf("%d", &b);
 
 	c = (a + b) * 0.05 + (a + b);
 

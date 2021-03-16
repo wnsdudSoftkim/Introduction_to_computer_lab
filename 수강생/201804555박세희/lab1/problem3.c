@@ -6,7 +6,7 @@ int main(void) {
 	double pi = 3.14;
 
 	printf("enter a radius:\n");
-	scanf_s("%lf", &r);
+	scanf("%lf", &r);
 
 	volume = pi * 40.f / 30.f * r * r * r;
 

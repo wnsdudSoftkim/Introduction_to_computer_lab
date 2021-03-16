@@ -5,11 +5,11 @@ int main(void)
     float loan, interest, monthlyPayment;
 
     printf("\nEnter the amount of loan: ");
-    scanf_s("%f", &loan);
+    scanf("%f", &loan);
     printf("Enter interest rate: ");
-    scanf_s("%f", &interest);
+    scanf("%f", &interest);
     printf("Enter monthly payment: ");
-    scanf_s("%f", &monthlyPayment);
+    scanf("%f", &monthlyPayment);
 
     interest = (interest * 0.01f) / 12;
 

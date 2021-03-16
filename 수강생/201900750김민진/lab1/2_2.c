@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-main_2()
+main()
 {
 	float volume, pi = 3.141592;
 
