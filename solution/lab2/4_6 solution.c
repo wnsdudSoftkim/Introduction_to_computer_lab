@@ -27,11 +27,7 @@ int main(void)
     second_sum = num1 + num3 + num5 + num7 + num9+num11; // 홀수
     total = ((3 * first_sum) + second_sum)-1;
     printf("%d",total);
-
-
-
     printf("Check digit: %d\n",9 - (total % 10));
-
     return 0;
 }
 
