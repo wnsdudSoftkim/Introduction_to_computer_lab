@@ -10,9 +10,12 @@
 //를 출력하세요
 int main() {
     int grade;
-    char mark;
+
     printf("Enter numerical grade : ");
     scanf("%d",&grade);
+    if(grade < 0 || grade > 100){
+        printf("Error");
+    }
     switch(grade/10) {
         case 10:
         case 9:
@@ -26,17 +29,10 @@ int main() {
             break;
         case 6:
             printf("Letter grade : D");
-            break;
-        case 5:
-        case 4:
-        case 3:
-        case 2:
-        case 1:
-        case 0:
+            break;          
+        default:
             printf("Letter grade : F");
             break;
-        default:
-            printf("Error");
     }
 
 }

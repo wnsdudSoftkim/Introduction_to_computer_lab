@@ -10,6 +10,7 @@
 // (printf는 7 장에서 볼 수 있듯이 base8로 숫자를 
 // 표시 할 수 있습니다. 
 // 따라서 이 프로그램 을실제로 더 쉽게 쓰는 방법이 있습니다. 
+//8진수 변환
 int main(void) {
     int number;
     printf("Enter a number between 0 and 32767: ");
@@ -32,3 +33,13 @@ int main(void) {
         last_number);
     return 0;
 }
+// //#4-4
+// int main() {
+// 	int num;
+
+// 	printf("Enter a number between 0 and 32767 : ");
+
+// 	scanf("%d", &num);
+// 	printf("In octal, your number is: :%#o", num);
+
+// }

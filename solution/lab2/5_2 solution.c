@@ -6,14 +6,17 @@
 #include <stdio.h>
 #include <stdlib.h>  
 int main() {
-    int hour,minites;
+    int hour,minites,transHour;
     printf("Enter a 24-hour time: ");
     scanf("%d:%d",&hour,&minites);
-    if (hour > 12) {
-        char mark[3] = "PM";
-        printf("Equivalent 12-hour time: %d:%d %s",hour-12,minites,mark);
-    }else {
-         char mark[3] = "AM";
-        printf("Equivalent 12-hour time: %d:%d %s",hour,minites,mark);
-    }
+   if (hour >= 12) { 
+       if(hour ==24) {
+
+            printf("Equivalent 12-hour time: %d:%.2d AM",hour-24,minites);
+       }else {
+            printf("Equivalent 12-hour time: %d:%.2d PM",hour-12,minites);
+       }
+   }else {
+        printf("Equivalent 12-hour time: %d:%.2d AM",hour,minites);
+   }
 }

@@ -10,9 +10,6 @@
 int main() {
     char myString[4];
     printf("Enter a number: ");
-    //문자열을 집어넣은 경우엔 문자열 자체가
-    //(변수가 포인터나 배열일때)
-    //주소 이므로 안써도 된다.
     scanf("%s",myString);
     int myStringLength = strlen(myString);
     if(myStringLength>=4) {

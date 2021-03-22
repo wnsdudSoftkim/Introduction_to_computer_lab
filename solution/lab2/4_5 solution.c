@@ -13,7 +13,7 @@ int main(void)
     first_sum =  num0+num2 + num4 + num6 + num8 + num10; //짝수
     second_sum = num1 + num3 + num5 + num7 + num9; // 홀수
     total = (3 * first_sum) + second_sum;
-    int answer = 10 - (total%10);
+    int answer = 9 - ((total-1)%10);
 
 
 
