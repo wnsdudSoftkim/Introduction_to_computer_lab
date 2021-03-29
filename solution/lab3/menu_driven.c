@@ -32,44 +32,50 @@ int odd() {
 }
 int checkPrime() {
     int number;
+    int bool = 0;
     printf("Enter a Number: ");
     scanf("%d",&number);
     if(number ==1) {
         printf("Prime");
     }else {
         for(int i=2; i<=number; i++){
-            if(number%i==0){ // 나머지 있으니까 소수 x
-                printf("Not Prime");
-                break;
+            if(number%i==0){ // 나머지 있으니까 소수 x    
+                continue;       
             }else {
-                printf("Prime");
-                break;
+                bool += 1;
             }
         }
     }
+    (bool==0) ? printf("Not Prime") :printf("Prime");
 }
 int getPrime() {
     int a,b,number,i=0,j=0,count=0,temp=0;
     int answer[500];
+    int bool = 0;
     printf("Enter two number: ");
     scanf("%d%d",&a,&b);
 
     if (a >b){
-        printf("No Prime");
+        //에러
     }else if(a ==b) {
-        number = a;
         checkPrime();
     }else {
         for(j=a; j<=b; j++){
             for(i =2; i<=j;i++){
                 if((j%i)==0){
                     break;
+                }else {
+                    bool++;
                 }
             }
-            if(i==j){
+            if(bool>0){
                 answer[count] = j;
                 count++;
             }
+            // if(i==j){ //1
+            //     answer[count] = j;
+            //     count++;
+            // }
         }
         
     }
@@ -86,9 +92,19 @@ int factorial(int fac) {
     return fac*factorial(fac-1);
 }
 int fibonacci(num) {
+    //기본적인 피보나치 알고리즘
     if(num==0) return 0;
     if(num==1) return 1;
     return fibonacci(num-2)+fibonacci(num-1);
+    // int before = 0,after = 1;
+    // int answer;
+    // for(int i =2; i<num; i++){
+    //     printf("%d",answer);
+    //     answer = before+after;
+    //     before = after;
+    //     after = answer;
+    // }
+    // return answer;
 }
 int main() {
     int selectNum=1;
@@ -104,7 +120,7 @@ int main() {
     printf("7. Generate the Fibonacci sequence up to a number \'n\'");
     printf("\n0.exit\n");
     while(1){
-        printf("Select menu item:");
+        printf("\nSelect menu item:");
         scanf("%d",&selectNum);
         if(selectNum==0){
             break;
@@ -134,3 +150,27 @@ int main() {
         }
     }
 }
+// void factorial_between_two_numbers() {
+//     int n, m,t,r,j=1;
+//     printf("Enter the range (n m) :");
+//     scanf_s("%d %d", &n, &m);
+
+//     if (n < 0 || m < 0) {
+//         printf("error");
+//         factorial_between_two_numbers();
+//     }
+//     else if (n > m) {
+//         t = n;
+//         n = m;
+//         m = t;
+//     }
+
+//     for (j = n; j <= m; j++) {
+//         r = 1;
+//         for (int i = 1; i <= j; i++) {
+//             r *= i;
+//         }
+//         printf("%d! = %d\n", j,r);
+//     }
+    
+// }
