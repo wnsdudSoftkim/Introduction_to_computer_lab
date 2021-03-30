@@ -64,18 +64,19 @@ int getPrime() {
             for(i =2; i<=j;i++){
                 if((j%i)==0){
                     break;
-                }else {
-                    bool++;
                 }
+                // }else {
+                //     bool++;
+                // }
             }
-            if(bool>0){
-                answer[count] = j;
-                count++;
-            }
-            // if(i==j){ //1
+            // if(bool>0){
             //     answer[count] = j;
             //     count++;
             // }
+            if(i==j){ //1
+                answer[count] = j;
+                count++;
+            }
         }
         
     }
@@ -93,18 +94,18 @@ int factorial(int fac) {
 }
 int fibonacci(num) {
     //기본적인 피보나치 알고리즘
-    if(num==0) return 0;
-    if(num==1) return 1;
-    return fibonacci(num-2)+fibonacci(num-1);
-    // int before = 0,after = 1;
-    // int answer;
-    // for(int i =2; i<num; i++){
-    //     printf("%d",answer);
-    //     answer = before+after;
-    //     before = after;
-    //     after = answer;
-    // }
-    // return answer;
+    // if(num==0) return 0;
+    // if(num==1) return 1;
+    // return fibonacci(num-2)+fibonacci(num-1);
+    int before = 0,after = 1;
+    int answer;
+    for(int i =2; i<num; i++){
+        printf("%d",answer);
+        answer = before+after;
+        before = after;
+        after = answer;
+    }
+    return answer;
 }
 int main() {
     int selectNum=1;
