@@ -1,34 +1,20 @@
 #include<stdio.h>
-#include<string.h>
+#include <ctype.h>
 
-int main()
-{
-   char input;
-   int answer;
-   while(1) {
-        input = getchar();
-        if(input =='\n') break;
-        strlwr(input);
-        switch (input) {
+int main() {
+    char input;
+    int answer=0;
+    printf("Enter sentence: ");
+    while((input = getchar()) != '\n') {
+        switch (tolower(input)) {
             case 'a':
-                answer++;
-                break;
             case 'e':
-                answer++;
-                break;
             case 'i':
-                answer++;
-                break;
             case 'o':
-                answer++;
-                break;
             case 'u':
                 answer++;
                 break;
-        
-       default:
-           break;
-       }
-   }
+        }
+    }
     printf("Your sentence contains %d vowels.", answer);
 }
