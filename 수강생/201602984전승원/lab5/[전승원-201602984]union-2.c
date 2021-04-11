@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main(void) {
+	char set1[20];
+	char set2[20];
+	char* res = malloc(sizeof(char) * 20);
+	char temp;
+
+	printf("input first set of char elements.");
+	int set1_index = 0;
+	while ((temp = getchar()) != '\n') {
+		if (temp == ' ')
+			continue;
+		set1[set1_index++] = temp;
+	}
+	set1[set1_index] = '\0';
+
+	printf("input second set of char elements.");
+	int set2_index = 0;
+
+	while ((temp = getchar()) != '\n') {
+		if (temp == ' ')
+			continue;
+		set2[set2_index++] = temp;
+	}
+	set2[set2_index] = '\0';
+
+	int res_index = 0;
+	for (int i = 0; i < strlen(set1); i++) {
+		bool contain = false;
+		for (int j = 0; j < strlen(res); j++) {
+			if (res[j] == set1[i])
+				contain = true;
+		}
+		if (contain == false)
+			res[res_index++] = set1[i];
+	}
+
+	for (int i = 0; i < strlen(set2); i++) {
+		bool contain = false;
+		for (int j = 0; j < strlen(res); j++) {
+			if (res[j] == set2[i])
+				contain = true;
+		}
+		if (contain == false)
+			res[res_index++] = set2[i];
+	}
+
+	res[res_index] = '\0';
+
+	for (int i = 0; i < strlen(res); i++) {
+		printf("%c ", res[i]);
+	}
+
+}
