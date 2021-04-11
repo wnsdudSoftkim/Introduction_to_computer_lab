@@ -1,6 +1,6 @@
 int main() {
-
-	printf("Size of int: %d bytes\n", sizeof(int));
+	int a;
+	printf("Size of int: %d bytes\n", sizeof(a));
 	printf("Size of short: %d bytes\n", sizeof(short));
 	printf("Size of long: %d bytes\n", sizeof(long));
 	printf("Size of float %d bytes\n", sizeof(float));
