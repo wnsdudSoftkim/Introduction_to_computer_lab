@@ -17,9 +17,7 @@ int main() {
                 data[i] = data[j];
                 data[j] = temp;
             }
-        }
-        
-        
+        }   
     }
     for(int i=0; i<number; i++) {
         printf("%d ",data[i]);
