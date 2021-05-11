@@ -17,6 +17,7 @@ int main()
     int flag = 1;
     int number;
     //struct 변수 선언
+
     struct Book n[20];
     //책 갯수를 위한 변수
     int count = 0;
@@ -47,7 +48,7 @@ int main()
                     printf("Enter a positive number");
                     break;
                 }
-
+                //중복체크
                 for (int i = 0; i < count; i++)
                 {
                     if (n[count].ID == n[i].ID)
@@ -186,7 +187,8 @@ int main()
                     //두 문자열이 같으면 0
                     if (strcmp(authorname, n[i].AuthorName) == 0)
                     {
-                        printf("Book ID: %d Book Name: %s Publication Date :%s Publisher Name: %s Publisher Phone Number:%d Author Name:%s Author Email Address:%s",
+                        printf("------------------------------------------------");
+                        printf("Book ID: %d \nBook Name: %s\n Publication Date :%s\n Publisher Name: %s \nPublisher Phone Number:%d \nAuthor Name:%s \nAuthor Email Address:%s\n",
                         n[i].ID, n[i].BookName, n[i].BookDate, n[i].PublisherName, n[i].PublisherPhone, n[i].AuthorName, n[i].AuthorEmail);
                     }
                 }
@@ -201,8 +203,8 @@ int main()
                     //두 문자열이 같으면 0
                     if (strcmp(publishername, n[i].PublisherName) == 0)
                     {
-
-                        printf("Book ID: %d Book Name: %s Publication Date :%s Publisher Name: %s Publisher Phone Number:%d Author Name:%s Author Email Address:%s",
+                        printf("------------------------------------------------");
+                        printf("Book ID: %d \nBook Name: %s \nPublication Date :%s\n Publisher Name: %s \n Publisher Phone Number:%d \nAuthor Name:%s \nAuthor Email Address:%s\n",
                         n[i].ID, n[i].BookName, n[i].BookDate, n[i].PublisherName, n[i].PublisherPhone, n[i].AuthorName, n[i].AuthorEmail);
                     }
                 }
@@ -211,7 +213,8 @@ int main()
             case 7:
                 for (int i = 0; i < count; i++)
                 {
-                    printf("Book ID: %d Book Name: %s Publication Date :%s Publisher Name: %s Publisher Phone Number:%d Author Name:%s Author Email Address:%s",
+                    printf("------------------------------------------------");
+                    printf("Book ID: %d\n Book Name: %s\n Publication Date :%s\n Publisher Name: %s\n Publisher Phone Number:%d\n Author Name:%s\n Author Email Address:%s\n",
                     n[i].ID, n[i].BookName, n[i].BookDate, n[i].PublisherName, n[i].PublisherPhone, n[i].AuthorName, n[i].AuthorEmail);
                     
                 }
