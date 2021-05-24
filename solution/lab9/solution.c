@@ -11,12 +11,10 @@ struct Book
     char AuthorEmail[20];
 };
 
-//struct 변수 선언
-struct Book n[20];
 //책 갯수를 위한 변수
 int count = 0;
 
-int AddBook()
+void AddBook(struct Book n[])
 {
     //중복확인 변수
     int Addflag = 1;
@@ -40,7 +38,7 @@ int AddBook()
     if (Addflag == 0)
     {
         printf("Duplicate ID");
-        return;
+        return ;
     }
 
     printf("Enter Book Name : \n");
@@ -56,9 +54,8 @@ int AddBook()
     printf("Enter Author Email Address: \n ");
     scanf("%s", n[count].AuthorEmail);
     count++;
-    return 0;
 }
-int UpdateBook()
+void UpdateBook(struct Book n[])
 {
     int updatenum, i;
     int updateflag = 0;
@@ -93,16 +90,14 @@ int UpdateBook()
         scanf("%s", n[i].AuthorName);
         printf("Enter Author Email Address: \n ");
         scanf("%s", n[i].AuthorEmail);
-        return;
     }
     else
     {
         printf("No update ID");
         return;
     }
-    return;
 }
-int DeleteBook()
+void DeleteBook(struct Book n[])
 {
     int deletenum, i;
     int deleteflag = 0;
@@ -134,9 +129,8 @@ int DeleteBook()
         printf("No Delete ID");
         return;
     }
-    return;
 }
-int SearchBook()
+void SearchBook(struct Book n[])
 {
     int searchnum;
     int searchflag = 0;
@@ -155,9 +149,8 @@ int SearchBook()
             break;
         }
     }
-    return;
 }
-int DisplayBookAuthor()
+void DisplayBookAuthor(struct Book n[])
 {
     char authorname[20];
     printf("Enter authorname: ");
@@ -174,7 +167,7 @@ int DisplayBookAuthor()
     }
     return;
 }
-int DisplayBookPublisher()
+void DisplayBookPublisher(struct Book n[])
 {
     char publishername[20];
     printf("Enter publishername: ");
@@ -191,7 +184,7 @@ int DisplayBookPublisher()
     }
     return;
 }
-int DisplayAll()
+void DisplayAll(struct Book n[])
 {
     for (int i = 0; i < count; i++)
     {
@@ -201,14 +194,14 @@ int DisplayAll()
     }
     return;
 }
-int main()
-{
+int main() {
+    struct Book n[20];
     //반복문을 위한 변수
     int flag = 1;
-    int number;
 
     while (flag)
     {
+        int number;
         printf("\nEnter menu Select: \n");
         printf("1 : ADD BOOK\n");
         printf("2 : Update Book\n");
@@ -222,32 +215,34 @@ int main()
         switch (number)
         {
 
-        case 1:
-            AddBook();
-            break;
-        case 2:
-            UpdateBook();
-            break;
-        case 3:
-            DeleteBook();
-            break;
-        case 4:
-            SearchBook();
-            break;
-        case 5:
-            DisplayBookAuthor();
-            break;
-        case 6:
-            DisplayBookPublisher();
-            break;
-        case 7:
-            DisplayAll();
-            break;
-        case 8:
-            flag = 0;
-            break;
-        default:
-            break;
+            case 1:
+                AddBook(n);
+                break;
+            case 2:
+                UpdateBook(n);
+                break;
+            case 3:
+                DeleteBook(n);
+                break;
+            case 4:
+                SearchBook(n);
+                break;
+            case 5:
+                DisplayBookAuthor(n);
+                break;
+            case 6:
+                DisplayBookPublisher(n);
+                break;
+            case 7:
+                DisplayAll(n);
+                break;
+            case 8:
+                flag = 0;
+                break;
+            default:
+                flag=0;
+                break;
+        }
         
     }
 }
