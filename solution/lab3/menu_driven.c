@@ -1,3 +1,4 @@
+# include <time.h>
 int even() {
     int number, count=0;
     int answer[500];
@@ -136,7 +137,11 @@ int main() {
             getPrime();
         }else if(selectNum==5) {
             scanf("%d",&fac);
+            double start,end;
+            start = clock();
             printf("%d",factorial(fac));
+            end = clock();
+            printf("%.3f",end-start);
         }
         else if(selectNum==6) {
             scanf("%d%d",&fac1,&fac2);
