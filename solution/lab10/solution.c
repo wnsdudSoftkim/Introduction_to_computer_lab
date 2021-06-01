@@ -1,5 +1,6 @@
 # include <stdio.h>
 # include <math.h>
+# include <time.h>
 
 int i;
 
@@ -29,11 +30,33 @@ void displayOdd(int *n){
 
 int checkPrime(int *n){
 	int flag = 1;	
+	double start,end;
 	if(*n==1){
 		flag = 0;
 		return flag;
 	}
-	
+	start = clock();
+	//소수를 구하는 첫번 째 방법 (worst case)
+	// for(int i=2; i<*n; i++){
+	// 	if(*n % i == 0) {
+	// 		flag = 0;
+	// 		end = clock();
+	// 		printf("time taken : %f\n",(end-start)/1000);
+	// 		return flag;
+	// 	}
+	// }
+	// 자기자신을 제외하고 절반을 초과하는 숫자에서 
+	//   나눴을때 나머지가 0이되는 숫자는 나올수가 없다.
+	//소수를 구하는 두번째 방법
+	// for(int i=2; i<=*n/2; i++){
+	//    if(*n % i == 0) {
+	// 		flag = 0;
+	// 		end = clock();
+	// 		printf("time taken : %.6lf\n",end-start);
+	// 		return flag;
+	// 	}
+    // } 
+	//세번째 방법 (best case)
 	for(i = 2; i <= sqrt(*n); i++){
 		if(*n%i == 0){
 			flag = 0;
@@ -68,20 +91,20 @@ void fibonacci(int *n){
 	}
 }
 
-int sequence(int *n){
-	int result = 0;
+// int sequence(int *n){
+// 	int result = 0;
 	
-	for(i = 1; i <= 10; i++){
-		if(i%2 == 1){
-			result += pow(*n,(2*i - 1));
-		}
-		else{
-			result -= pow(*n,(2*i - 1));
-		}
-	}
+// 	for(i = 1; i <= 10; i++){
+// 		if(i%2 == 1){
+// 			result += pow(*n,(2*i - 1));
+// 		}
+// 		else{
+// 			result -= pow(*n,(2*i - 1));
+// 		}
+// 	}
 	
-	return result;
-}
+// 	return result;
+// }
 
 int main(){
 	
@@ -96,13 +119,13 @@ int main(){
 		printf("5. Display a factorial of a given number.\n");
 		printf("6. Factorial of all numbers.\n");
 		printf("7. Fibonacci sequence.\n");
-		printf("8. Find the sum of the series [x - x^3 + x^5 + ...]\n");
 		printf("0. Exit\n\n");
 		scanf("%d", &cmd);
 		switch(cmd){
 			case 1:
 				printf("Please Enter a number : ");
 				scanf("%d", &num);
+				//주소값을 반환하기 위해 &연산자를 씀
 				displayEven(&num);
 				break;
 			
@@ -163,12 +186,6 @@ int main(){
 				fibonacci(&num);
 				break;
 				
-			case 8:
-				printf("Please Enter a number : ");
-				scanf("%d", &num);
-				
-				printf("The result of Sequence is %d.\n", sequence(&num));
-				break;
 				
 			default:
 				printf("Invalid choice\n");
